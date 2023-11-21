@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>books edit list</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<body>
+    <header>
+        <h4>My Books edit</h4>
+        <a href='/books'>home</a> | <a href='/logout'>logout</a>
+    </header>
+
+    <table>
+            <% books.forEach((bk)=> { %>  
+                <tr>
+                    <td><%= bk.title %> <cite><%= bk.author %></cite></td>
+                    <td style="text-align: center;">
+                        <a href='/editbook?eid=<%= bk.id %>'>edit</a>
+                    </td>
+                    <td style="text-align: center;"> delete </td>
+                </tr>
+            <% }); %>
+    </table>
+
+    <nav>
+        <% for(i=1; i <= num_pages; i++ ){ %>
+
+            <a href="/editp?page=<%= i %>"><%= i %></a> | 
+
+        <% }  %>
+    </nav>
+</body>
+</html>

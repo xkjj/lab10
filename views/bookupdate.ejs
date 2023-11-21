@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book edit</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<body>
+    <header>
+        <h4>Edit Book</h4>
+        <a href='/edit'>edit books</a> | <a href='/logout'>logout</a>
+    </header>
+    <% book.forEach((bkdata) => {  %> 
+        <form action="/editbook" method="POST">
+          <p>
+              <label>Book id:</label>
+              <input type="text" name="id_field" readonly value="<%= bkdata.id %>">
+          
+              <label>Book title:</label>
+              <input type="text" name="title_field" value="<%= bkdata.title %>">
+          </p>
+          <input type="submit" value="update">
+        </form>
+      <%});%>
+    
+</body>
+</html>
